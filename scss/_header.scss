@@ -1,0 +1,61 @@
+header {
+    margin-top: 1.6rem;
+    position: sticky;
+    top: 1.6rem;
+    z-index: 2023;
+
+    .content-header {
+        border-radius: 100px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        background: rgba(255, 255, 255, 0.04);
+        backdrop-filter: blur(3.5px);
+        @include flex-center-space-between;
+        padding: .8rem .8rem .8rem 2.1rem;
+
+        .left-content {
+            @include flex-center;
+            gap: 1.6rem;
+
+            a {
+                @include flex-center;
+                gap: .8rem;
+
+                span {
+                    color: gray-100;
+                    font-size: 1.6rem;
+                    font-weight: 500;
+                    line-height: 150%;
+                    transition: color .3s ease;
+                }
+
+                &:hover {
+                    span {
+                        color: $purple-10;
+                    }
+                }
+            }
+        }
+
+        .btn-mobile {
+            display: none;
+        }
+    }
+
+    @include responsivo('mobile') {
+        .content-header {
+            padding: 2rem 2.5rem;
+
+            .logo {
+                max-width: 13.5rem;
+            }
+
+            .left-content {
+                display: none;
+            }
+
+            .btn-mobile {
+                display: block;
+            }
+        }
+    }
+}
